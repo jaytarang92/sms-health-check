@@ -34,4 +34,4 @@ def main(sendMessageTimer: func.TimerRequest) -> None:
         comm_service_connection_string=environ['COMM_SERVICE_CONNECTION_STRING']
     )
     sms.send_sms(message_to_send=f'Message from FunctionApp sent at: {utc_timestamp}')
-    info(f'Message was sent at: {utc_timestamp}')
+    info(f'Message was successfully sent at: {utc_timestamp}')
