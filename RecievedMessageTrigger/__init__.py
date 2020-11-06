@@ -1,9 +1,10 @@
 from datetime import datetime, timezone
+from json import loads
 from logging import info
 from os import environ
 from azure import functions as func
-from ..common import SimpleMessagingService, SmsRecieved
-from json import loads
+from ..common import SimpleMessagingService
+from ..common.models import SmsRecieved
 
 def main(msg: func.ServiceBusMessage):
     sms_event_data = SmsRecieved(loads(msg.get_body().decode('utf-8')))
